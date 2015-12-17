@@ -1,0 +1,13 @@
+<h1>WELCOME to JenTube</h1>
+<%= link_to('Add New Video', new_video_path) %>
+
+<% @videos.each do | video | %>
+ <h4><%= link_to(video.title, edit_video_path(video)) %></h4>
+ <small><%= link_to('Delete Video', video_path(video), method: "DElETE", data: { 
+ 	confirm: "Are you sure?"})%></small>
+
+ <video src="<%= video.url %>" controls></video>
+
+
+
+	<% end %>
